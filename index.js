@@ -5,7 +5,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 app.get("/", function(req, res) {
-    res.send("bot lancer");
+    res.send("selftbot lancer");
 });
 
 app.listen(port);
@@ -15,9 +15,9 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
+  if (msg.content.startsWith("<@317375697700126720>")) {
+    msg.reply('Je te réponds quand je peut (message automatique)');
   }
 });
 
-client.login('NDAxMzc1MTI0MDkzMTQxMDEz.DTpRPA.lq82a1u1emVnxSOXVdqZMxWXcNw');
+client.login("MzE3Mzc1Njk3NzAwMTI2NzIw.DRsYJw.VW7FV1-uymvMdTIuErGvSsLcrSA");
