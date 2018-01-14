@@ -25,6 +25,7 @@ client.on('message', msg => {
     if (msg.content.startsWith("<@317375697700126720>")) {
         msg.reply('Je te réponds quand je peut (message automatique)');
     }
+    const request = require("request");
     else if (msg.content.startsWith("#kikoo")) {
         if (msg.content.replace("#kikoo ", "") === "") {
             msg.reply("`kikoo <Query>`");
