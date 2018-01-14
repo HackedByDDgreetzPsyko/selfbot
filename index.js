@@ -18,7 +18,7 @@ client.on('message', msg => {
   if (msg.content.startsWith("<@317375697700126720>")) {
     msg.reply('Je te réponds quand je peut (message automatique)');
   }
-    if (!msg.guild) msg.reply("Je te réponds quand je peut (message automatique)"); {
+   if (!msg.guild) msg.reply("Je te réponds quand je peut (message automatique)");
     
 });
 
