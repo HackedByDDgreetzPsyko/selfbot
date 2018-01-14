@@ -15,6 +15,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+    if (!msg.guild && msg.author.id !== "317375697700126720") msg.reply("Je te réponds quand je peut (message automatique)");
   if (msg.content.startsWith("<@317375697700126720>")) {
     msg.reply('Je te réponds quand je peut (message automatique)');
   }
