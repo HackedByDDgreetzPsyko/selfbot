@@ -5,6 +5,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 app.get("/", function(req, res) {
+    <title>Title test</title>
     res.send("selftbot lancer " + "https://blog.artstorefronts.com/wp-content/uploads/2016/03/ASF-Artists-Website-09.gif");
 });
 
