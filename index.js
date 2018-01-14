@@ -12,6 +12,7 @@ app.get("/", function (req, res) {
 
 app.listen(port);
 
+const request = require("request");
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
