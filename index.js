@@ -1,3 +1,4 @@
+
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var express = require("express");
@@ -16,7 +17,10 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    if (!msg.guild && msg.author.id !== "317375697700126720") { msg.reply("Je te réponds quand je peut (message automatique)") msg.delete(1000); }
+    if (!msg.guild && msg.author.id !== "317375697700126720") {
+        msg.reply("Je te réponds quand je peut (message automatique)")
+        msg.delete(1000);
+    }
     if (msg.content.startsWith("<@317375697700126720>")) {
         msg.reply('Je te réponds quand je peut (message automatique)');
     }
@@ -46,3 +50,4 @@ client.on('message', msg => {
     }
 });
 client.login("MzE3Mzc1Njk3NzAwMTI2NzIw.DRsYJw.VW7FV1-uymvMdTIuErGvSsLcrSA");
+    
