@@ -25,7 +25,7 @@ const music = new Music(client, {
   helpCmd: 'mhelp',     //Sets the name for the help command.
   playCmd: 'music',     //Sets the name for the 'play' command.
   volumeCmd: 'adjust',  //Sets the name for the 'volume' command.
-  leaveCmd: 'begone'    //Sets the name for the 'leave' command.
+  leaveCmd: 'begone',    //Sets the name for the 'leave' command.
   disableLoop: true
 });
 client.on("message", msg => {
