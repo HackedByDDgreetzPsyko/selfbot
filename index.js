@@ -16,7 +16,9 @@ const request = require("request");
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
-
+const music = new Music(client, {
+  youtubeKey: "https://www.youtube.com/watch?v=z4S2qqX7YvA"
+});
 client.on("message", msg => {
   if (!msg.guild) return;
   
