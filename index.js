@@ -18,6 +18,7 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 const music = new Music(client, {
+  youtubeKey: "AIzaSyDs1NJ5wF-pvykTHh_9_CP4tIrkQzuFRqw"
   prefix: settings.prefix,       // Prefix for the commands.
   global: true,         // Non-server-specific queues.
   maxQueueSize: 25,     // Maximum queue size of 25.
