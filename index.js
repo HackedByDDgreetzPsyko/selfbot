@@ -29,6 +29,14 @@ const music = new Music(client, {
   disableLoop: true
 });
 client.on("message", msg => {
+  if (!message.content.startsWith(settings.prefix)) return;
+  let command = message.content.split(' ')[0].slice(settings.prefix.length);
+  if (command === 'ping') { //old basic ping command.
+    message.channel.send('Pinging...').then(msg => {
+      msg.edit(`Response took: \`(${msg.createdTimestamp - message.createdTimestamp}ms)\``);
+    });
+  };
+  
   if (!msg.guild) return;
   
   if (msg.content === "/join") {
