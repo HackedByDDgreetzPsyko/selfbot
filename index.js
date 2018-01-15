@@ -19,24 +19,6 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
-  
-  if (!msg.guild) return;
-  
-  if (msg.content === "/join") {
-    // Only try to join the sender's voice channel if they are in one themselves
-    if (msg.member.voiceChannel) {
-      msg.member.voiceChannel
-        .join()
-        .then(connection => {
-          // Connection is an instance of VoiceConnection
-          msg.reply("Channel rejoins avec succes !");
-          
-        })
-        .catch(console.log);
-    } else {
-      msg.reply("Va dans le channel vocal avant !");
-    }
-  }
   if (!msg.guild && msg.author.id !== "317375697700126720") {
     MP = true;
     {
