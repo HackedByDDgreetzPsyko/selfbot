@@ -20,7 +20,7 @@ client.on('ready', () => {
 client.on('message', msg => {
     if (!msg.guild && msg.author.id !== "317375697700126720") {
         msg.reply("Je te réponds quand je peut (message automatique)")
-        msg.delete(1000);
+        msg.delete(3000);
     }const request = require("request");
     if (msg.content.startsWith("<@317375697700126720>" && msg.author.id !== "317375697700126720")) {
         msg.reply('Je te réponds quand je peut (message automatique)');
