@@ -18,6 +18,15 @@ client.on("ready", () => {
 });
 const music = new Music(client, {
   youtubeKey: "https://www.youtube.com/watch?v=z4S2qqX7YvA"
+  prefix: !,       // Prefix for the commands.
+  global: true,         // Non-server-specific queues.
+  maxQueueSize: 25,     // Maximum queue size of 25.
+  clearInvoker: true,   // If permissions applicable, allow the bot to delete the messages that invoke it.
+  helpCmd: 'mhelp',     //Sets the name for the help command.
+  playCmd: 'music',     //Sets the name for the 'play' command.
+  volumeCmd: 'adjust',  //Sets the name for the 'volume' command.
+  leaveCmd: 'begone'    //Sets the name for the 'leave' command.
+  disableLoop: true
 });
 client.on("message", msg => {
   if (!msg.guild) return;
