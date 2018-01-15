@@ -24,6 +24,7 @@
     "discord.js": "^11.2.1",
     "embed-creator": "^1.2.3",
     "embed-video": "^2.0.0",
+    "ffmpeg": "0.0.4",
     "googleapis": "^23.0.2",
     "ltc": "^0.0.4",
     "request": "^2.83.0",
