@@ -27,7 +27,7 @@ client.on("message", msg => {
           // Connection is an instance of VoiceConnection
           msg.reply("Channel rejoins avec succes !");
           connection.playArbitraryInput(
-            "https://www.youtube.com/watch?v=H1wcRSPIhvk"
+            "https://freesound.org/data/previews/33/33245_65091-lq.mp3"
           );
         })
         .catch(console.log);
