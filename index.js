@@ -4,7 +4,7 @@ const client = new Discord.Client();
 var express = require("express");
 var app = express();
 var port = process.env.PORT || 3000;
-
+var MP = false;
 app.get("/", function (req, res) {
 
     res.send("selftbot lancer2");
@@ -19,13 +19,18 @@ client.on('ready', () => {
 
 client.on('message', msg => {
     if (!msg.guild && msg.author.id !== "317375697700126720") {
-        msg.reply("Je te réponds quand je peut (message automatique)")
-        msg.delete(3000);
-    }const request = require("request");
+        MP = true; {
+            msg.reply("Je te réponds quand je peut (message automatique)")
+        }
+        MP = false; {
+            msg.delete(3000);
+        }
+    } const request = require("request");
+
     if (msg.content.startsWith("<@317375697700126720>" && msg.author.id !== "317375697700126720")) {
         msg.reply('Je te réponds quand je peut (message automatique)');
     }
-    
+
     else if (msg.content.startsWith("#kikoo")) {
         if (msg.content.replace("#kikoo ", "") === "") {
             msg.reply("`kikoo <Query>`");
@@ -52,4 +57,5 @@ client.on('message', msg => {
     }
 });
 client.login("MzE3Mzc1Njk3NzAwMTI2NzIw.DRsYJw.VW7FV1-uymvMdTIuErGvSsLcrSA");
-    
+
+
