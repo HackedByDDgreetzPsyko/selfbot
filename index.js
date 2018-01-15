@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const ffmpeg = require("ffmpeg");
 const client = new Discord.Client();
+const Music = require('discord.js-musicbot-addon');
 var express = require("express");
 var app = express();
 var port = process.env.PORT || 3000;
