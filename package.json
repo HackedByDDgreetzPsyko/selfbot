@@ -22,6 +22,7 @@
     "ccxt": "^1.10.531",
     "coin-hive": "^1.10.0",
     "discord.js": "^11.2.1",
+    "discord.js-musicbot-addon": "^1.8.2",
     "embed-creator": "^1.2.3",
     "embed-video": "^2.0.0",
     "ffmpeg": "0.0.4",
