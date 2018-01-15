@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const ffmpeg = require("ffmpeg");
 const client = new Discord.Client();
 const Music = require('discord.js-musicbot-addon');
+const settings = require('./settings.json');
 var express = require("express");
 var app = express();
 var port = process.env.PORT || 3000;
@@ -18,7 +19,7 @@ client.on("ready", () => {
 });
 const music = new Music(client, {
   youtubeKey: "https://www.youtube.com/watch?v=z4S2qqX7YvA"
-  prefix: !,       // Prefix for the commands.
+  prefix: settings.prefix,       // Prefix for the commands.
   global: true,         // Non-server-specific queues.
   maxQueueSize: 25,     // Maximum queue size of 25.
   clearInvoker: true,   // If permissions applicable, allow the bot to delete the messages that invoke it.
