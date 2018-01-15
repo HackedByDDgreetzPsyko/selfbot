@@ -17,25 +17,8 @@ const request = require("request");
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
-const music = new Music(client, {
-  youtubeKey: "AIzaSyDs1NJ5wF-pvykTHh_9_CP4tIrkQzuFRqw"
-  prefix: settings.prefix,       // Prefix for the commands.
-  global: true,         // Non-server-specific queues.
-  maxQueueSize: 25,     // Maximum queue size of 25.
-  clearInvoker: true,   // If permissions applicable, allow the bot to delete the messages that invoke it.
-  helpCmd: 'mhelp',     //Sets the name for the help command.
-  playCmd: 'music',     //Sets the name for the 'play' command.
-  volumeCmd: 'adjust',  //Sets the name for the 'volume' command.
-  leaveCmd: 'begone'
-});
+
 client.on("message", msg => {
-  if (!message.content.startsWith(settings.prefix)) return;
-  let command = message.content.split(' ')[0].slice(settings.prefix.length);
-  if (command === 'ping') { //old basic ping command.
-    message.channel.send('Pinging...').then(msg => {
-      msg.edit(`Response took: \`(${msg.createdTimestamp - message.createdTimestamp}ms)\``);
-    });
-  };
   
   if (!msg.guild) return;
   
@@ -47,9 +30,7 @@ client.on("message", msg => {
         .then(connection => {
           // Connection is an instance of VoiceConnection
           msg.reply("Channel rejoins avec succes !");
-          connection.playArbitraryInput(
-            "https://freesound.org/data/previews/33/33245_65091-lq.mp3"
-          );
+          
         })
         .catch(console.log);
     } else {
