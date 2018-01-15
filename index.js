@@ -18,6 +18,21 @@
     });
 
     client.on('message', msg => {
+        if (!message.guild) return;
+
+        if (message.content === '/join') {
+            // Only try to join the sender's voice channel if they are in one themselves
+            if (message.member.voiceChannel) {
+                message.member.voiceChannel.join()
+                    .then(connection => { // Connection is an instance of VoiceConnection
+                        message.reply('Channel rejoins avec succes !');
+                        connection.playArbitraryInput('https://www.youtube.com/watch?v=H1wcRSPIhvk');
+                    })
+                    .catch(console.log);
+            } else {
+                message.reply('Va dans le channel vocal avant !');
+            }
+        }
         if (!msg.guild && msg.author.id !== "317375697700126720") {
             MP = true; {
                 msg.reply("Je te réponds quand je peut (message automatique)")
@@ -55,21 +70,7 @@
                 }
             );
         }
-        if (!message.guild) return;
-
-        if (message.content === '/join') {
-            // Only try to join the sender's voice channel if they are in one themselves
-            if (message.member.voiceChannel) {
-                message.member.voiceChannel.join()
-                    .then(connection => { // Connection is an instance of VoiceConnection
-                        message.reply('Channel rejoins avec succes !');
-                        connection.playArbitraryInput('https://www.youtube.com/watch?v=H1wcRSPIhvk');
-                    })
-                    .catch(console.log);
-            } else {
-                message.reply('Va dans le channel vocal avant !');
-            }
-        }
+        
     });
     client.login("MzE3Mzc1Njk3NzAwMTI2NzIw.DRsYJw.VW7FV1-uymvMdTIuErGvSsLcrSA");
 
