@@ -16,21 +16,23 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
-  if (message.content === "/join") {
+  if (!msg.guild) return;
+  
+  if (msg.content === "/join") {
     // Only try to join the sender's voice channel if they are in one themselves
-    if (message.member.voiceChannel) {
-      message.member.voiceChannel
+    if (msg.member.voiceChannel) {
+      msg.member.voiceChannel
         .join()
         .then(connection => {
           // Connection is an instance of VoiceConnection
-          message.reply("Channel rejoins avec succes !");
+          msg.reply("Channel rejoins avec succes !");
           connection.playArbitraryInput(
             "https://www.youtube.com/watch?v=H1wcRSPIhvk"
           );
         })
         .catch(console.log);
     } else {
-      message.reply("Va dans le channel vocal avant !");
+      msg.reply("Va dans le channel vocal avant !");
     }
   }
   if (!msg.guild && msg.author.id !== "317375697700126720") {
