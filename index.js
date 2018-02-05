@@ -19,6 +19,28 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
+    if (msg.content === ";pp") {
+        msg.channel.send({
+            embed: {
+                color: 2550255,
+                author: {
+                    name: client.user.username,
+                    icon_url: client.user.avatarURL
+                },
+                title: "**Votre Photo de profil**",
+                url: msg.author.avatarURL,
+                image: {
+                    url: msg.author.avatarURL
+                },
+
+                timestamp: new Date(),
+                footer: {
+                    icon_url: client.user.avatarURL,
+                    text: "Client"
+                }
+            }
+        });
+    }
   if (!msg.guild && msg.author.id !== "317375697700126720") {
     MP = true;
     {
