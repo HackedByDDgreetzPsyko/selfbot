@@ -28,7 +28,7 @@ client.on("message", msg => {
                     icon_url: client.user.avatarURL
                 },
                 title: "**Votre Photo de profil**",
-                url: msg.author.avatarURL,
+                url: avatar.username,
                 image: {
                     url: msg.author.avatarURL
                 },
