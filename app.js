@@ -42,7 +42,7 @@ client.on("message", msg => {
         });
     }
    else if (msg.content.startsWith("#kikoo")) {
-    if (msg.content.replace("#kikoo ", "") === "") {
+    if (msg.content.replace("*youtube ", "") === "") {
       msg.reply("`kikoo <Query>`");
     }
     request(
