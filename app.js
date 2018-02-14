@@ -41,13 +41,13 @@ client.on("message", msg => {
             }
         });
     }
-   else if (msg.content.startsWith("#kikoo")) {
+   else if (msg.content.startsWith("*youtube")) {
     if (msg.content.replace("*youtube ", "") === "") {
       msg.reply("`kikoo <Query>`");
     }
     request(
       "https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" +
-        msg.content.replace("#kikoo ", "") +
+        msg.content.replace("*youtube ", "") +
         "&type=video&videoDefinition=high&key=AIzaSyB-IuppTwP4EnCr_O6tN-4Unmz2eQWfakI",
       (error, response, body) => {
         if (error || response.statusCode !== 200) {
