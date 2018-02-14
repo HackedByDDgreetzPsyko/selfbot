@@ -66,7 +66,7 @@ client.on("message", msg => {
     request(
       "https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" +
         msg.content.replace("#kikoo ", "") +
-        "&type=video&videoDefinition=high&key=AIzaSyDs1NJ5wF-pvykTHh_9_CP4tIrkQzuFRqw",
+        "&type=video&videoDefinition=high&key=AIzaSyB-IuppTwP4EnCr_O6tN-4Unmz2eQWfakI",
       (error, response, body) => {
         if (error || response.statusCode !== 200) {
           msg.reply("L'API de Google ne fonctionne pas lol.");
@@ -84,4 +84,4 @@ client.on("message", msg => {
     );
   }
 });
-client.login("mfa.D2-7F7lpmUxe8VQ6daKIUolHQm3e2h3tTTT8ErLNBYp8oo87p8Yp2qTJK3AK4dA_VzPw09xgEnL6Qy5-ucGG");
+client.login(process.env.TOKEN);
