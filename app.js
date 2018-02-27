@@ -108,32 +108,7 @@ client.on("message", msg => {
                 }
             }
         });
-    } else if (msg.content.startsWith("5y")) {
-        if (msg.content.replace("5y ", "") === "") {
-            msg.reply("`kikoo <Query>`");
-        }
-        request(
-            "https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" +
-            msg.content.replace("5y ", "") +
-            "&type=video&videoDefinition=high&key=AIzaSyDs1NJ5wF-pvykTHh_9_CP4tIrkQzuFRqw",
-            (error, response, body) => {
-                if (error || response.statusCode !== 200) {
-                    msg.reply("L'API de Google ne fonctionne pas lol.");
-                } else {
-                    body = JSON.parse(body);
-                    if (body.pageInfo.totalResults === 0) {
-                        msg.reply("Sans résultats lol."); // nice french
-                    } else {
-                        msg.reply(
-                            "La première vidéo: http://youtu.be/" + body.items[0].id.videoId
-                        );
-                    }
-                }
-            }
-        );
-
-
-    }
+    } 
 
 
     // commande help
@@ -169,6 +144,31 @@ client.on("message", msg => {
                 }
             }
         });
+    } else if (msg.content.startsWith("5y")) {
+        if (msg.content.replace("5y ", "") === "") {
+            msg.reply("`kikoo <Query>`");
+        }
+        request(
+            "https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" +
+            msg.content.replace("5y ", "") +
+            "&type=video&videoDefinition=high&key=AIzaSyDs1NJ5wF-pvykTHh_9_CP4tIrkQzuFRqw",
+            (error, response, body) => {
+                if (error || response.statusCode !== 200) {
+                    msg.reply("L'API de Google ne fonctionne pas lol.");
+                } else {
+                    body = JSON.parse(body);
+                    if (body.pageInfo.totalResults === 0) {
+                        msg.reply("Sans résultats lol."); // nice french
+                    } else {
+                        msg.reply(
+                            "La première vidéo: http://youtu.be/" + body.items[0].id.videoId
+                        );
+                    }
+                }
+            }
+        );
+
+
     }
 
     // fin du code message
