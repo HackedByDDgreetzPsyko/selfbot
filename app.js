@@ -1,4 +1,4 @@
-﻿const Discord = require("discord.js");
+const Discord = require("discord.js");
 const request = require("request");
 const client = new Discord.Client();
 var pre = "$";
@@ -17,7 +17,7 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
-    
+
     // commande afficher l'image de profile
     if (msg.content === "$pp") {
         msg.channel.send({
@@ -62,7 +62,7 @@ client.on("message", msg => {
             }
         });
     }
-    
+
 
     // commande info serv
     if (msg.content === '$serv') {
@@ -90,15 +90,15 @@ client.on("message", msg => {
                     },
                     {
                         name: "Nombres de serveur où-es " + client.user.username,
-                        value: "Je suis present dans "  + "**"  + client.guilds.size +  "**"  + " serveurs."
+                        value: "Je suis present dans " + "**" + client.guilds.size + "**" + " serveurs."
                     },
                     {
                         name: "L'administrateur du serveur **" + msg.guild.name + "**" + " ès " + "**" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator + "**.",
                         value: "**" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator + "** ès une personne trop puissante respecter la."
                     },
                     //{
-                       // name: "Nombres de messages envoyez par " + client.user.username,
-                        //value: "**" + "%s message" + "** messages envoyez par le bot"
+                    // name: "Nombres de messages envoyez par " + client.user.username,
+                    //value: "**" + "%s message" + "** messages envoyez par le bot"
                     //},
                 ],
                 timestamp: new Date(),
@@ -108,32 +108,32 @@ client.on("message", msg => {
                 }
             }
         });
-    }else if (msg.content.startsWith("$y")) {
-    if (msg.content.replace("$y ", "") === "") {
-      msg.reply("`kikoo <Query>`");
-    }
-    request(
-      "https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" +
-        msg.content.replace("$y ", "") +
-        "&type=video&videoDefinition=high&key=AIzaSyDs1NJ5wF-pvykTHh_9_CP4tIrkQzuFRqw",
-      (error, response, body) => {
-        if (error || response.statusCode !== 200) {
-          msg.reply("L'API de Google ne fonctionne pas lol.");
-        } else {
-          body = JSON.parse(body);
-          if (body.pageInfo.totalResults === 0) {
-            msg.reply("Sans résultats lol."); // nice french
-          } else {
-            msg.reply(
-              "La première vidéo: http://youtu.be/" + body.items[0].id.videoId
-            );
-          }
+    } else if (msg.content.startsWith("$y")) {
+        if (msg.content.replace("$y ", "") === "") {
+            msg.reply("`kikoo <Query>`");
         }
-      }
-    );
-    
+        request(
+            "https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" +
+            msg.content.replace("$y ", "") +
+            "&type=video&videoDefinition=high&key=AIzaSyDs1NJ5wF-pvykTHh_9_CP4tIrkQzuFRqw",
+            (error, response, body) => {
+                if (error || response.statusCode !== 200) {
+                    msg.reply("L'API de Google ne fonctionne pas lol.");
+                } else {
+                    body = JSON.parse(body);
+                    if (body.pageInfo.totalResults === 0) {
+                        msg.reply("Sans résultats lol."); // nice french
+                    } else {
+                        msg.reply(
+                            "La première vidéo: http://youtu.be/" + body.items[0].id.videoId
+                        );
+                    }
+                }
+            }
+        );
 
-  }
+
+    }
 
 
     // commande help
@@ -170,13 +170,13 @@ client.on("message", msg => {
             }
         });
     }
-    
+
     // fin du code message
 });
 // Membre qui rejoins le serveur
 client.on("guildMemberAdd", member => {
     var role = member.guild.roles.find("name", "Visiteurs");
-    client.channels.get("402120240516825092").send({
+    client.channels.get("413027477598765056").send({
         embed: {
             title: "Un nouveaux Visiteurs sont nom, @" + member.user.username + ".",
             color: 0x0FFF00
@@ -187,7 +187,7 @@ client.on("guildMemberAdd", member => {
 
 // Membre qui quite le Serveur
 client.on("guildMemberRemove", member => {
-    client.channels.get("402120240516825092").send({
+    client.channels.get("413027477598765056").send({
         embed: {
             title: member.user.username + ", A quitter le Serveur.",
             color: 0xFF0000
