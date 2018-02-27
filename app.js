@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const request = require("request");
 const client = new Discord.Client();
-var pre = "f";
+var pre = "5";
 client.on("ready", () => {
     // log bot bien lancer
     console.log(`Se connecter comme ${client.user.tag}!`);
@@ -19,7 +19,7 @@ client.on("ready", () => {
 client.on("message", msg => {
 
     // commande afficher l'image de profile
-    if (msg.content === "fpp") {
+    if (msg.content === "5pp") {
         msg.channel.send({
             embed: {
                 color: 0xE74C3C,
@@ -43,7 +43,7 @@ client.on("message", msg => {
     }
 
     // commande inviter le bot
-    if (msg.content === "fadd") {
+    if (msg.content === "5add") {
         msg.channel.send({
             embed: {
                 color: 0xFAA61A,
@@ -65,7 +65,7 @@ client.on("message", msg => {
 
 
     // commande info serv
-    if (msg.content === 'fserv') {
+    if (msg.content === '5serv') {
         msg.channel.send({
             embed: {
                 color: 0x566573,
@@ -108,13 +108,13 @@ client.on("message", msg => {
                 }
             }
         });
-    } else if (msg.content.startsWith("fy")) {
-        if (msg.content.replace("fy ", "") === "") {
+    } else if (msg.content.startsWith("5y")) {
+        if (msg.content.replace("5y ", "") === "") {
             msg.reply("`kikoo <Query>`");
         }
         request(
             "https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" +
-            msg.content.replace("fy ", "") +
+            msg.content.replace("5y ", "") +
             "&type=video&videoDefinition=high&key=AIzaSyDs1NJ5wF-pvykTHh_9_CP4tIrkQzuFRqw",
             (error, response, body) => {
                 if (error || response.statusCode !== 200) {
@@ -137,7 +137,7 @@ client.on("message", msg => {
 
 
     // commande help
-    if (msg.content === "fhelp") {
+    if (msg.content === "5help") {
         msg.channel.send({
             embed: {
                 color: 0x566573,
