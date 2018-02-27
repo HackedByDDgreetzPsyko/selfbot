@@ -176,7 +176,7 @@ client.on("message", msg => {
 // Membre qui rejoins le serveur
 client.on("guildMemberAdd", member => {
     var role = member.guild.roles.find("name", "Visiteurs");
-    client.channels.get(["402120240516825092","413027477598765056"]).send({
+    client.channels.get("402120240516825092"]).send({
         embed: {
             title: "Un nouveaux Visiteurs sont nom, @" + member.user.username + ".",
             color: 0x0FFF00
@@ -187,7 +187,7 @@ client.on("guildMemberAdd", member => {
 
 // Membre qui quite le Serveur
 client.on("guildMemberRemove", member => {
-    client.channels.get(["402120240516825092","413027477598765056"]).send({
+    client.channels.get("402120240516825092").send({
         embed: {
             title: member.user.username + ", A quitter le Serveur.",
             color: 0xFF0000
