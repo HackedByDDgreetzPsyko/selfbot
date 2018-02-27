@@ -176,7 +176,7 @@ client.on("message", msg => {
 // Membre qui rejoins le serveur
 client.on("guildMemberAdd", member => {
     var role = member.guild.roles.find("name", "Visiteurs");
-    client.channels.get("402120240516825092"]).send({
+    client.channels.get("402120240516825092").send({
         embed: {
             title: "Un nouveaux Visiteurs sont nom, @" + member.user.username + ".",
             color: 0x0FFF00
