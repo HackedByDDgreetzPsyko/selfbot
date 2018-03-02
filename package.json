@@ -5,7 +5,7 @@
   "main": "index.js",
   "token": "process.env.TOKEN",
     "prefix": "$",
-    "logchannel": "413027477598765056"
+    "logchannel": "413027477598765056",
   "scripts": {
     "start": "node index.js"
   },
