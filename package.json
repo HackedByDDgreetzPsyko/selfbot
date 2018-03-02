@@ -6,6 +6,12 @@
   "scripts": {
     "start": "node index.js"
   },
+  {
+    "token": "",
+    "prefix": "$",
+    "logchannel": "418400873249505281"
+},
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FANTOME000/-ShieldingBot.git"
