@@ -3,16 +3,13 @@
   "version": "1.0.0",
   "description": "Discord bot by FANTOME000",
   "main": "index.js",
+  "token": "process.env.TOKEN",
+    "prefix": "$",
+    "logchannel": "413027477598765056"
   "scripts": {
     "start": "node index.js"
   },
-  {
-    "token": "",
-    "prefix": "$",
-    "logchannel": "413027477598765056"
-},
-
-  "repository": {
+   "repository": {
     "type": "git",
     "url": "git+https://github.com/FANTOME000/-ShieldingBot.git"
   },
