@@ -2,6 +2,11 @@ const Discord = require("discord.js");
 const request = require("request");
 const client = new Discord.Client();
 var pre = "5";
+var moment = require('moment') //npm i moment
+var randomcolor = require('randomcolor') //npm i randomcolor
+var winston = require('winston'); //npm i winston
+var util = require('util') //npm i util
+
 client.on("ready", () => {
     // log bot bien lancer
     console.log(`Se connecter comme ${client.user.tag}!`);
@@ -66,10 +71,7 @@ client.on("message", msg => {
         setInterval(function () {
             if (spamming_2 === true) 
 
-                if (spamming_2 === true) {
-                    client.user.setUsername("PUTE");
-                    client.user.setUsername("PD");
-                    client.user.setUsername("FDP");
+                if (spamming_2 === true) { client.setNickname
             } else {
                 return;
             }
@@ -123,7 +125,18 @@ client.on("message", msg => {
         });
     } 
 
-
+    else if (command == "clear") {
+        let delamount = parseInt(args[1]) ? parseInt(args[1]) : 1;
+        msg.channel.fetchMessages({
+            limit: amount
+        })
+            .then(messages => {
+                msgar = messages.array();
+                msgar = msgar.filter(msg => msg.author.id === bot.user.id);
+                msgar.length = delamount + 1;
+                msgar.map(msg => msg.delete().catch(console.error));
+            });
+    }
     // commande help
     if (msg.content === "5help") {
         msg.channel.send({
